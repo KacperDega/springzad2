@@ -9,7 +9,6 @@ public class Main {
 
         List<Vehicle> listaPojazduw = test.getVehicleList();
 
-
         //listaPojazduw.add(new Motorcycle("Motur", "Szybki", 2025, 9999, false, "L0 SPEED", "AAA"));
 
         System.out.println("Odczytane z pliku: ");
