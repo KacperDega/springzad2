@@ -7,12 +7,12 @@ import java.util.List;
 public class VehicleRepository implements IVehicleRepository {
     private List<Vehicle> vehicleList;
 
-    public List<Vehicle> getVehicleList() {
-        return vehicleList;
-    }
-
     public VehicleRepository() {
         vehicleList = new ArrayList<>();
+    }
+
+    public List<Vehicle> getVehicleList() {
+        return vehicleList;
     }
 
     @Override

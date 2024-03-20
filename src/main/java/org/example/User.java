@@ -33,10 +33,6 @@ public class User {
         return String.format("%s;%s;%s;%s;",login,password,role,rentedCarPlate);
     }
 
-    public void setRentedCarPlate(String rentedCarPlate) {
-        this.rentedCarPlate = rentedCarPlate;
-    }
-
     @Override
     public String toString() {
         return "User{" +
