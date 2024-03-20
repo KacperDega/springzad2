@@ -13,7 +13,7 @@ public class Main {
         testusers.getUsers("users.csv");
         List<User> userList = testusers.getUserList();
 
-        //listaPojazduw.add(new Motorcycle("Motur", "Szybki", 2025, 9999, false, "L0 SPEED", "AAA"));
+        //listaPojazduw.add(new Motorcycle("Motuur", "Szybki", 2025, 9999, false, "L0 SPEED", "AAA"));
 
 //        System.out.println("Odczytane z pliku: ");
 //        for (Vehicle i : listaPojazduw) {
