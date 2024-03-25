@@ -67,7 +67,13 @@ public class UserRepository implements IUserRepository {
         }
     }
 
-    void add(User user){
-        userList.add(user);
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
+    }
+
+    public void printUsers(){
+        for (User i : userList){
+            System.out.println(i.toString());
+        }
     }
 }

@@ -4,7 +4,7 @@ public class User {
     private String login;
     private String password;
     private String role;
-    private String rentedCarPlate;
+    private String rentedVehiclePlate;
 
     public String getLogin() {
         return login;
@@ -18,19 +18,27 @@ public class User {
         return role;
     }
 
-    public String getRentedCarPlate() {
-        return rentedCarPlate;
+    public String getRentedVehiclePlate() {
+        return rentedVehiclePlate;
     }
 
-    public User(String login, String password, String role, String rentedCarPlate) {
+    public User(String login, String password, String role, String rentedVehiclePlate) {
         this.login = login;
         this.password = password;
         this.role = role;
-        this.rentedCarPlate = rentedCarPlate;
+        this.rentedVehiclePlate = rentedVehiclePlate;
+    }
+
+    public void rentCar(String plate){
+        rentedVehiclePlate = plate;
+    }
+
+    public void returnVehicle(){
+        rentedVehiclePlate = "";
     }
 
     public String toCSV(){
-        return String.format("%s;%s;%s;%s;",login,password,role,rentedCarPlate);
+        return String.format("%s;%s;%s;%s;",login,password,role, rentedVehiclePlate);
     }
 
     @Override
@@ -39,7 +47,7 @@ public class User {
                 "login='" + login + '\'' +
                 ", password='" + password + '\'' +
                 ", role='" + role + '\'' +
-                ", rentedCarPlate='" + rentedCarPlate + '\'' +
+                ", rentedCarPlate='" + rentedVehiclePlate + '\'' +
                 '}';
     }
 

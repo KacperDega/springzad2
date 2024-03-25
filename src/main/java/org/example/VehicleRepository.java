@@ -80,22 +80,48 @@ public class VehicleRepository implements IVehicleRepository {
     }
 
     @Override
-    public void addVehicle(String brand, String model, int year, double price, boolean rented, String plate){
+    public void addVehicle(String brand, String model, int year, double price, boolean rented, String plate) {
         vehicleList.add(new Car(brand, model, year, price, rented, plate));
-    };
+    }
 
     @Override
-    public void addVehicle(String brand, String model, int year, double price, boolean rented, String plate, String category){
+    public void addVehicle(String brand, String model, int year, double price, boolean rented, String plate, String category) {
         vehicleList.add(new Motorcycle(brand, model, year, price, rented, plate, category));
     }
 
     @Override
-    public void removeVehicle(String plate){
-        for (Vehicle i : vehicleList){
-            if (i.getPlate().equals(plate)){
+    public void removeVehicle(String plate, String filename) {
+        for (Vehicle i : vehicleList) {
+            if (i.getPlate().equals(plate)) {
                 vehicleList.remove(i);
                 break;
             }
+        }
+
+        save(filename);
+    }
+
+    public boolean checkRented(String plate) {
+        for (Vehicle i : vehicleList) {
+            if (i.getPlate().equals(plate)) {
+                return i.isRented();
+            }
+        }
+        return false;
+    }
+
+    public Vehicle getVehicle(String plate) {
+        for (Vehicle i : vehicleList) {
+            if (i.getPlate().equals(plate)) {
+                return i;
+            }
+        }
+        return null;
+    }
+
+    public void printVehicles(){
+        for (Vehicle i : vehicleList){
+            System.out.println(i.toString());
         }
     }
 }
